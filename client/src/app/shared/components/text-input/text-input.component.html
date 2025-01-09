@@ -1,0 +1,21 @@
+<div class="form-floating mb-3">
+  <input type="{{ type }}" [formControl]="control" placeholder="{{ label }}" class="form-control" [ngClass]="
+      control.touched ? (control.invalid ? 'is-invalid' : 'is-valid') : null
+    " />
+  <div *ngIf="control.status === 'PENDING'" class="fa fa-spinner fa-spin loader"></div>
+  <label for="floatingInput">{{ label }}</label>
+  <div *ngIf="control.errors?.['required']" class="invalid-feedback">
+    Please enter a {{ label }}
+  </div>
+  <div *ngIf="control.errors?.['email']" class="invalid-feedback">
+    Please enter a valid email
+  </div>
+  <div *ngIf="control.errors?.['pattern']" class="invalid-feedback">
+    This pattern requires at least two lowercase letters, two uppercase letters,
+    two digits, and two special characters. There must be a minimum of 9
+    characters total, and no white space characters are allowed.
+  </div>
+  <div *ngIf="control.errors?.['emailExists']" class="invalid-feedback">
+    Email address is taken
+  </div>
+</div>
