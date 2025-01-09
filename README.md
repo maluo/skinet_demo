@@ -10,3 +10,4 @@ An interactive portal based on .NET Core, Angular, and SQL Lite.
 - ASP .NET Core
 - Angular
 - SQL Lite
+- Redis
